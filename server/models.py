@@ -15,7 +15,8 @@ class Bakery(db.Model, SerializerMixin):
     name = db.Column(db.String(80) )
     create_at = db.Column(db.DateTime )
     updated_at = db.Column(db.DateTime )
-
+    serialized_rules = "-baked_goods.bakery" 
+    
     # Define a one-to-many relationship with BakedGood
     baked_goods = db.relationship('BakedGood', backref='bakery')
 
