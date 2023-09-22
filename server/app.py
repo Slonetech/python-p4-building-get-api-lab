@@ -23,6 +23,12 @@ def bakeries():
     bakeries_data =[]
     return jsonify(bakeries_data)
 
+@app.route('/bakeries/<int:id>', methods=['GET'])
+def bakery(id):
+   bakery=bakery.query.filter_by(id=id).first()
+   
+
+
 @app.route('/baked_goods/by_price')
 def baked_goods_by_price():
     return ''
